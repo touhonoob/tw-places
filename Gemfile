@@ -21,7 +21,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 gem "mongoid", "~> 4.0.0"
-
+gem "simple_form", "~> 3.1.0.rc1" 
+gem 'bootstrap-sass', '~> 3.3.3'
+gem 'bootstrap-generators', '~> 3.3.1'
+# gem 'annotate', '~> 2.6.6'
+gem 'will_paginate', '~> 3.0.6'
 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
