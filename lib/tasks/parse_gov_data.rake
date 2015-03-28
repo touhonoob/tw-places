@@ -11,8 +11,11 @@ task "parse_gov_place_api" => :environment do
     _hash = {}
     info.each do |info_attr|
       key = info_attr[0].downcase
+      key = "gov_id" if key == "id"
       _hash[:"#{key}"] = info_attr[1]
     end
     infos_formatted_array << _hash
   end
+
+  Place.create(infos_formatted_array)
 end
