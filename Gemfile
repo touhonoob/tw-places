@@ -27,6 +27,7 @@ gem 'bootstrap-generators', '~> 3.3.1'
 # gem 'annotate', '~> 2.6.6'
 gem 'will_paginate', '~> 3.0.6'
 
+gem 'react-rails', github: 'reactjs/react-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
