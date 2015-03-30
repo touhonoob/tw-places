@@ -5,7 +5,7 @@ class PlacesController < ApplicationController
   # GET /places.json
   def index
     if params[:searchValue].present?
-      @places = [Place.where(name: params[:searchValue]).first]
+      @places = Place.where(name: /.*#{params[:searchValue]}.*/).to_a
     else
       @places = Place.all.to_a
     end
