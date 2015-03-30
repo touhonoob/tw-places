@@ -1,5 +1,15 @@
 
 var PlaceSearch = React.createClass({
+
+  handleOnSubmit: function(e) {
+    e.preventDefault();
+    var searchValue = React.findDOMNode(this.refs.search).value.trim();
+
+    this.props.onSearchSubmit(searchValue)
+
+    return;
+  },
+
   render: function() {
     return (
       <div className="filter-wrapper">
@@ -8,8 +18,9 @@ var PlaceSearch = React.createClass({
           &nbsp;
         </div>
         <div className="form-wrapper">
-          <form>
-            <input ref="search" placeholder="Search people..." type="search"/>
+          <form onSubmit={this.handleOnSubmit}>
+            <input ref="search" placeholder="Search places..." type="search"/>
+            <input type="submit" value="Search" />
           </form>
         </div>
       </div>

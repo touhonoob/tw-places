@@ -4,7 +4,11 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
-    @places = Place.all
+    if params[:searchValue].present?
+      @places = [Place.where(name: params[:searchValue]).first]
+    else
+      @places = Place.all
+    end
   end
 
   # GET /places/1
