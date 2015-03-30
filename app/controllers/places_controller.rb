@@ -7,7 +7,12 @@ class PlacesController < ApplicationController
     if params[:searchValue].present?
       @places = [Place.where(name: params[:searchValue]).first]
     else
-      @places = Place.all
+      @places = Place.all.to_a
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @places }
     end
   end
 

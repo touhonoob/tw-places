@@ -2,10 +2,14 @@
 var Place = React.createClass({
   render: function() {
     return (
-      <div className="place">
-        <h2>
-          {this.props.name}
-        </h2>
+      <div className="panel panel-default">
+        <div className="panel-heading">
+          <h3 className="panel-title">{this.props.place.name}</h3>
+        </div>
+        <div className="panel-body">
+          Description:
+          <p>{this.props.place.toldescribe}</p>
+        </div>
       </div>
     );
   }

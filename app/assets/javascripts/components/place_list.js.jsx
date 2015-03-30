@@ -30,7 +30,11 @@ var PlaceLists = React.createClass({
   render: function() {
 
     var placeNodes = this.state.places.map(function(place) {
-      return <Place name={place.name} key={place.gov_id} />
+      return (
+        <div className="col-sm-4">
+          <Place place={place} key={place.gov_id} />
+        </div>
+      )
     });
 
     return (
@@ -38,7 +42,9 @@ var PlaceLists = React.createClass({
         <div className="search-wrapper">
           <PlaceSearch onSearchSubmit={this.handleSearchCommit} />
         </div>
-        { placeNodes }
+        <div className="row">
+          { placeNodes }
+        </div>
       </div>
     );
   }
